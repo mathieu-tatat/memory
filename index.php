@@ -20,7 +20,7 @@ if (!isset($_SESSION["tab"])){
 
 if(isset($_GET['restart'])){
     session_destroy();
-    header('Location:memory.php');
+    header('Location:index.php');
     $_SESSION["count"] = 0;
     $_SESSION["pressed"]=["a","b"];
     $_SESSION["key"] = ["",""];
@@ -34,7 +34,7 @@ if(isset($_GET)){
         $_SESSION["tab"][key($_GET)-1] = $_SESSION["cards"][key($_GET)-1] ;
         $_SESSION["pressed"][] = $_SESSION["tab"][key($_GET)-1];
         $_SESSION["key"][] = key($_GET)-1;
-        header('Location:memory.php');
+        header('Location:index.php');
         $_SESSION["count"] ++;
         }
 }
@@ -51,7 +51,7 @@ if ($_SESSION["count"] >2 && $win == false){
     $_SESSION["key"] = NULL;
     $_SESSION["pressed"][] = $_SESSION["tab"][key($_GET)-1];
     $_SESSION["key"][] = key($_GET)-1;
-    header('Location:memory.php');
+    header('Location:index.php');
 }
 elseif($_SESSION["count"] >2 && $win == true){
     $_SESSION["count"] = 1;
@@ -59,13 +59,13 @@ elseif($_SESSION["count"] >2 && $win == true){
     $_SESSION["key"] = NULL;
     $_SESSION["pressed"][] = $_SESSION["tab"][key($_GET)-1];
     $_SESSION["key"][] = key($_GET)-1;
-    header('Location:memory.php');
+    header('Location:index.php');
 }
 
 if($_SESSION["count"]>2){
     $_SESSION["key"] = ["",""];
     $_SESSION["count"] = 0;
-    header('Location:memory.php');}
+    header('Location:index.php');}
 ?>
 
 <div class="game">

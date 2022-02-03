@@ -137,7 +137,7 @@ footer{
 }
 	
 .indfoot{
-	width:100%;
+    width:100%;
     height:50px;
     display:flex;
     margin-top:180px;

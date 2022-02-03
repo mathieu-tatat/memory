@@ -35,7 +35,7 @@ form{
 	flex-direction:column;
 	text-align:center;
 	align-items:center;
-	width:100%;
+	width:60%;
 }
 
 #menu_area{
@@ -45,7 +45,7 @@ form{
 #game_area{
 	display:flex;
 	width:60%;
-	min-width:500px;
+	min-width:450px;
 	flex-wrap:wrap;
 	justify-content: center;
 	margin-bottom:1%;

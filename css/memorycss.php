@@ -44,7 +44,7 @@ form{
 
 #game_area{
 	display:flex;
-	width:60%;
+	width:50%;
 	min-width:450px;
 	flex-wrap:wrap;
 	justify-content: center;

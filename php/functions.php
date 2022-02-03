@@ -95,7 +95,7 @@
 
 	//Mets à jour le classement
 	function update_rankings(){
-		$db=connect_to('memorydb','root');
+		$db=connect_to('mathieu-tatat_memorydb','memorydb');
 		$users=$db->query("SELECT * FROM `users`");
 		//Pour chaque joueur dans la db
 		for($i=0;$i<$users->num_rows;$i++){

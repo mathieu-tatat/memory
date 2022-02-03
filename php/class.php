@@ -42,7 +42,7 @@
 
 		public function createUser(){
 			//On se connecte à la base de données
-			$db=connect_to('memorydb', 'users');
+			$db=connect_to('mathieu-tatat_memorydb', 'users');
 			//On vérifie l'input utilisateur
 			$temp_login=strtolower($this->login);
 			$this->login=strtolower($this->login);
@@ -74,7 +74,7 @@
 		//Connecte l'utilisateur
 		//Cherche l'existence du login et vérifie le mot de passe associé
 		public function logUser(&$connect){
-			$db=connect_to('memorydb', 'users');
+			$db=connect_to('mathieu-tatat_memorydb', 'users');
 			$temp_login=strtolower($this->login);
 			if($result=look_for($temp_login,$db)){
 				if(password_verify($this->password,$result['password'])){

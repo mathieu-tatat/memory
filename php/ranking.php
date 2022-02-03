@@ -1,6 +1,6 @@
 <?php	
 	require_once 'functions.php';
-	$_SESSION['conn']=connect_to('memorydb', 'users');
+	$_SESSION['conn']=connect_to('mathieu-tatat_memorydb', 'users');
 	$users=$_SESSION['conn']->query("SELECT score,login FROM `users` ORDER BY score DESC ");
 ?>
 

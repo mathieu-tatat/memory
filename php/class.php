@@ -88,7 +88,7 @@
 
 		//Enregistre le score de l'utilisateur
 		public function storeGame($level,$counter,$time){
-			$db=connect_to2('memorydb', 'games');
+			$db=connect_to2('mathieu-tatat_memorydb', 'games');
 			$login=strtolower($this->login);
 			$played=array_key_last($time)-array_key_first($time);
 			if(!look_for($login, $db)){

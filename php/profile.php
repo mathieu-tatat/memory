@@ -1,6 +1,6 @@
 <?php
 	require_once 'functions.php';
-	$conn=connect_to('memorydb', '');
+	$conn=connect_to('mathieu-tatat_memorydb', 'memorydb');
 	if(isset($_GET['menu6']) && $_GET['menu6']){
 		if(look_for(strtolower($_GET['menu6']), $conn)){
 			$login=$_GET['menu6'];

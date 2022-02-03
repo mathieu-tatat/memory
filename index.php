@@ -343,7 +343,6 @@
 
 		</main>
 
-		<footer>
 			<?php
 			if(isset($_SESSION['connected']) && $_SESSION['connected']=='success' && (!isset($_SESSION['ingame']) || !$_SESSION['ingame'])){
 				?><form method="post" action="index.php" class="form_menu">
@@ -384,6 +383,8 @@
 				?><p>Compteur de coups de L'IA: <?php echo $_SESSION['AI_play_count'] ?>.<br></p><?php
 			}
 			?>
+		<footer>
+			<a href="https://github.com/mathieu-tatat/memory" class="fa fa-github"></a>
 		</footer>
 
 	</body>

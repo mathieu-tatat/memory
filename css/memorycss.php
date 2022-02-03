@@ -123,15 +123,19 @@ h1,h2,h3, p{
 }
 
 h1{
-	font-size:3em;
+    font-size:2em;
 	letter-spacing:0.2em;
 	margin:1% 0 1% 0;
 }
 
 h2{
-	font-size:2em;
 	letter-spacing:0.2em;
 	margin:1% 0 2% 0;
+}
+
+h3{
+	
+	margin:1% 0 1% 0;
 }
 
 footer{

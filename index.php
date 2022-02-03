@@ -383,7 +383,7 @@
 				?><p>Compteur de coups de L'IA: <?php echo $_SESSION['AI_play_count'] ?>.<br></p><?php
 			}
 			?>
-		<footer>
+		<footer class="indfoot">
 			<a href="https://github.com/mathieu-tatat/memory" class="fa fa-github"></a>
 		</footer>
 

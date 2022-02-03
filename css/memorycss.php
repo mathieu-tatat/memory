@@ -5,10 +5,11 @@
 <style>
 
 *{cursor:url('../assets/cursor1.png'), auto;}
-
+	
 body{
 	background-image:url(../assets/bg2.jpg);
-	background-size:100%;
+	background-size:cover;
+        background-repeat: no-repeat;
 	position:relative;
 	display:flex;
 	flex-direction:column;
@@ -18,6 +19,7 @@ body{
 	color:#E7D0B0;
 	margin:0;
 	width:100%;
+    	height:auto;
 }
 
 form{

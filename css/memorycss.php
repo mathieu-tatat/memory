@@ -133,12 +133,17 @@ h2{
 }
 
 footer{
+    width:100%;
+}
+	
+.indfoot{
 	width:100%;
     height:50px;
     display:flex;
     margin-top:180px;
     margin-left:50px;
 }
+	
 .fa {
     text-decoration:none;
     font-size:24px;

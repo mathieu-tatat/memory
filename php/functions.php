@@ -2,9 +2,9 @@
 
 	
 	function connect_to($db, $table){
-		$link=mysqli_connect('localhost', 'root', 'root');
+		$link=mysqli_connect('localhost:3306', 'memorydb', 'memorydb');
 		if(mysqli_select_db($link,$db)){
-			$conn=mysqli_connect('localhost', 'root', 'root', $db);
+			$conn=mysqli_connect('localhost:3306', 'memorydb', 'memorydb', $db);
 			$conn->query("
 					CREATE TABLE IF NOT EXISTS `$table` (
 					id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -27,7 +27,7 @@
 				}
 			}
 			if(mysqli_select_db($link, $db)){
-				$conn=mysqli_connect('localhost', 'root', 'root', $db);
+				$conn=mysqli_connect('localhost:3306', 'memorydb', 'memorydb', $db);
 				if(!$conn){
 					die("ERROR: Could not connect. " . mysqli_connect_error());
 				}
@@ -47,9 +47,9 @@
 
 	
 	function connect_to2($db, $table){
-		$link=mysqli_connect('localhost', 'root', 'root');
+		$link=mysqli_connect('localhost:3306', 'memorydb', 'memorydb');
 		if(mysqli_select_db($link,$db)){
-			$conn=mysqli_connect('localhost', 'root', 'root', $db);
+			$conn=mysqli_connect('localhost:3306', 'memorydb', 'memorydb', $db);
 			$conn->query("
 					CREATE TABLE IF NOT EXISTS `$table` (
 					id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -62,7 +62,7 @@
 		}
 
 		else{
-			$conn = mysqli_connect('localhost', 'root', 'root');
+			$conn = mysqli_connect('localhost:3306', 'memorydb', 'memorydb');
 
 			if(!$conn){
 				die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -74,7 +74,7 @@
 				}
 			}
 			if(mysqli_select_db($conn, $db)){
-				$conn=mysqli_connect('localhost', 'root', 'root', $db);
+				$conn=mysqli_connect('localhost:3306', 'memorydb', 'memorydb', $db);
 				if(!$conn){
 					die("ERROR: Could not connect. " . mysqli_connect_error());
 				}

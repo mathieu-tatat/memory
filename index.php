@@ -9,8 +9,8 @@
 	}
 
 	//db connection
-	$_SESSION['conn']=connect_to('memorydb', 'users');
-	$_SESSION['conn2']=connect_to2('memorydb', 'games');
+	$_SESSION['conn']=connect_to('mathieu-tatat_memorydb', 'users');
+	$_SESSION['conn2']=connect_to2('mathieu-tatat_memorydb', 'games');
 
 	//inscription new user
 	if(isset($_POST['login']) && $_POST['login'] && isset($_POST['password']) 
@@ -48,8 +48,8 @@
 			$_SESSION['user']=$temp_user;
 		}
 		$_SESSION['AI_play_count'] = 'R';
-		$_SESSION['conn']=connect_to('memorydb', 'users');
-		$_SESSION['conn2']=connect_to2('memorydb', 'games');
+		$_SESSION['conn']=connect_to('mathieu-tatat_memorydb', 'users');
+		$_SESSION['conn2']=connect_to2('mathieu-tatat_memorydb', 'games');
 	}
 
 	//Annulation retour 

@@ -42,7 +42,7 @@
 
 		public function createUser(){
 			//connexionà la base de données
-			$db=connect_to('memorydb', 'users');
+			$db=connect_to('mathieu-tatat_memorydb', 'users');
 			//verification de l'utilisateur
 			$temp_login=strtolower($this->login);
 			$this->login=strtolower($this->login);
@@ -74,7 +74,7 @@
 		//Connecte l'utilisateur
 		//Cherche l'existence du login et vérifie le mot de passe associé
 		public function logUser(&$connect){
-			$db=connect_to('memorydb', 'users');
+			$db=connect_to('mathieu-tatat_memorydb', 'users');
 			$temp_login=strtolower($this->login);
 			if($result=look_for($temp_login,$db)){
 				if(password_verify($this->password,$result['password'])){
@@ -88,7 +88,7 @@
 
 		//Enregistre le score de l'utilisateur
 		public function storeGame($level,$counter,$time){
-			$db=connect_to2('memorydb', 'games');
+			$db=connect_to2('mathieu-tatat_memorydb', 'games');
 			$login=strtolower($this->login);
 			$played=array_key_last($time)-array_key_first($time);
 			if(!look_for($login, $db)){

@@ -41,9 +41,9 @@
 		}
 
 		public function createUser(){
-			//On se connecte à la base de données
+			//connexionà la base de données
 			$db=connect_to('memorydb', 'users');
-			//On vérifie l'input utilisateur
+			//verification de l'utilisateur
 			$temp_login=strtolower($this->login);
 			$this->login=strtolower($this->login);
 			if(preg_match("/([%\$#\*.!&~\"\'{}\+^@=¤:|\/]+)/", $temp_login)){
@@ -55,12 +55,12 @@
 				return 0;
 			}
 			if($this->password!=$this->vpassword){
-				?><p>Erreur : Les mots de passe ne correspondent pas.</p><?php
+				?><p>Erreur : Erreur de mot de passe.</p><?php
 				return 0;
 			}
 			//On vérifie l'existence d'un doublon
 			if(look_for($temp_login, $db)){
-				?><p>Erreur : Ce nom d'utilisateur existe déjà.</p><?php
+				?><p>Nom d'utilisateur indisponible</p><?php
 				return 0;
 			}
 			//Si tout est OK ( aucun return ), on ajoute l'utilisateur à la db
@@ -82,7 +82,7 @@
 					return 1;
 				}
 			}
-			?><p>Erreur : Login ou mot de passe incorrect</p><?php
+			?><p>Login ou mot de passe incorrect</p><?php
 			return 0;
 		}
 
@@ -92,7 +92,7 @@
 			$login=strtolower($this->login);
 			$played=array_key_last($time)-array_key_first($time);
 			if(!look_for($login, $db)){
-				?><p>Il y a eut une erreur inattendue. Veuillez nous excuser pour la gêne occasionnée.</p><?php
+				?><p>erreur veuillez recommencer.</p><?php
 				return 0;
 			}
 			$stmt=$db->prepare("INSERT INTO `games` (login, difficulty, moves, played) VALUES (?,?,?,?)");

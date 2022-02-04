@@ -45,7 +45,6 @@
 		}
 	}
 
-	
 	function connect_to2($db, $table){
 		$link=mysqli_connect('localhost', 'root', 'root');
 		if(mysqli_select_db($link,$db)){
@@ -93,22 +92,19 @@
 		}
 	}
 
-	//Mets à jour le classement
+	//mise à jour du classement
 	function update_rankings(){
 		$db=connect_to('memorydb','root');
 		$users=$db->query("SELECT * FROM `users`");
-		//Pour chaque joueur dans la db
+		//
 		for($i=0;$i<$users->num_rows;$i++){
 			$score=0;
 			$result_users=mysqli_fetch_assoc($users);
 			$login=$result_users['login'];
 			$games=$db->query( "SELECT * FROM `games` WHERE login='$login'" );
-			//Si le joueur a déjà fait une partie
+			
 			if($games->num_rows){
-				//Chaque niveau rapporte 10000
-				//Chaque tour réduit le score de 1000
-				//Chaque seconde réduit le score de 200
-				//On fait la moyenne pour chaque partie jouée
+				//calcul des scores
 				for($j=0;$j<$games->num_rows;$j++){
 					$result_games=mysqli_fetch_assoc($games);
 					$level=$result_games['difficulty']*10000;
@@ -116,7 +112,7 @@
 					$time=$result_games['played']*-200;
 					$score=($score +($level-$moves-$time))/($j+1);
 				}
-				//On garde la partie entière du résultat et on l'insère dans la table
+				//mise a jour score du user
 				$score=intval($score);
 				$stmt=$db->prepare("UPDATE `users` SET score=? WHERE login=? ");
 				$stmt->bind_param("is", $score, $login);
@@ -125,7 +121,7 @@
 		}
 	}
 
-	//Vérifie l'existance du pseudo dans la db
+	//Vérification du pseudo 
 	function look_for($username, $db){
 		$row=$db->query("SELECT * FROM `users`");
 		for($i=0;$i<mysqli_num_rows($row);$i++){
@@ -137,19 +133,15 @@
 		return 0;
 	}
 
-	//Génération du plateau de jeu
+	//creation partie
 	function generate_cards($level){
 		if($level){
-			//On donne level=nombre de paires saisi par l'utilisateur
-			//Il y aura donc 2*nombre de paires en cartes
 			$level=2*$level;
 			$deck=range(1,$level);
-			//On mélange deux fois les cartes
+			//melange des cartes double
 			shuffle($deck);
 			shuffle($deck);
-			//On parcourt les cartes tant qu'elles existent
 			for($i=0;isset($deck[$i]);$i++){
-				//On créé les cartes et on envoie leur valeur dans le deck
 				${"card$i"}=new Card();
 				${"card$i"}->sendValue($deck[$i]);
 				$deck[$i]=${"card$i"};
@@ -157,16 +149,16 @@
 			return $deck;
 		}
 		else{
-			echo "Il y a eut une erreur dans la génération du jeu. Veuillez "?><a href="index.php">Réessayer</a><?php
+			echo "erreur de creation du jeu"?><a href="index.php">Réessayer</a><?php
 			return 0;
 		}
 	}
 
-	//Vérifie s'il reste des cartes face verso, permet de définir la fin de partie
+	//creation de victoire
 	function verify_game($deck){
 		for($i=0;isset($deck[$i]);$i++){
 			if($deck[$i]->getState()=='verso'){
-				return 0;
+				return 0; 
 			}
 		}
 		return 1;

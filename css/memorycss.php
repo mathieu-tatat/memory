@@ -1,14 +1,14 @@
 <?php
 	header("Content-type: text/css; charset: UTF-8");
 ?>
-
 <style>
 
 *{cursor:url('../assets/cursor1.png'), auto;}
 
 body{
 	background-image:url(../assets/bg2.jpg);
-	background-size:100%;
+	background-size:cover;
+    background-repeat: no-repeat;
 	position:relative;
 	display:flex;
 	flex-direction:column;
@@ -18,6 +18,7 @@ body{
 	color:#E7D0B0;
 	margin:0;
 	width:100%;
+    overflow-anchor: none;
 }
 
 form{
@@ -33,7 +34,7 @@ form{
 	flex-direction:column;
 	text-align:center;
 	align-items:center;
-	width:100%;
+	width:60%;
 }
 
 #menu_area{
@@ -42,8 +43,8 @@ form{
 
 #game_area{
 	display:flex;
-	width:60%;
-	min-width:500px;
+	width:50%;
+	min-width:450px;
 	flex-wrap:wrap;
 	justify-content: center;
 	margin-bottom:1%;
@@ -71,7 +72,6 @@ form{
 	padding:1% 0 1% 0;
 	margin-bottom:1%;
 	border:2px solid #E7D0B0;
-	
 }
 
 .menu_submit:hover{
@@ -103,8 +103,7 @@ input[type=text], input[type=password], input[type="number"]{
 	height:30px;
 	padding:0;
 	margin-bottom:1%;
-	background:#E7D0B0;
-    
+	background:#E7D0B0;  
 }
 
 label{
@@ -121,21 +120,56 @@ h1,h2,h3, p{
 }
 
 h1{
-	font-size:3em;
+    font-size:3em;
 	letter-spacing:0.2em;
 	margin:1% 0 1% 0;
 }
 
 h2{
-	font-size:2em;
 	letter-spacing:0.2em;
 	margin:1% 0 2% 0;
 }
 
-footer{
-	width:100%;
+h3{
+	font-size:2em;
+	margin:1% 0 1% 0;
 }
 
+.victory{
+    display:flex;
+    position:absolute;
+    font-size:50px;
+    padding: 1% 1%;
+    background-color: #59a34a;
+    border-radius: 40px;
+    border: 2px solid;
+}
+
+.menuRoul{
+    background-color:#59A34A;
+    color:#E7D0B0;
+}
+.menuRoul:hover{
+    background-color:#7DC76E;
+
+}
+footer{
+    width:100%;
+}
+
+.indfoot{
+	width:100%;
+    height:50px;
+    display:flex;
+    margin-top:180px;
+    margin-left:50px;
+}
+
+.fa {
+    text-decoration:none;
+    font-size:24px;
+    color:#59A34A;
+}
 /** RANKING **/
 
 #rank_title{
@@ -181,9 +215,6 @@ footer{
 }
 
 /**PROFILE**/
-
-#body_profile{
-}
 
 #body_profile main{
 	width:50%;

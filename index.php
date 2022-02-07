@@ -390,15 +390,11 @@
 			}
 			else{
 			?>
-				<p><?php echo "Compteur de coups de l'utilisateur : " . $_SESSION['play_count'] . "<br>";?></p>
+				<p><?php echo "Nombre de tentatives : " . $_SESSION['play_count'] . "<br>";?></p>
 			<?php
 			}
 		}
-		if(isset($_SESSION['AI_play_count']) && in_array($_SESSION['AI_play_count'], range(1,40))){
-			?>
-				<p>Compteur de coups de L'IA: <?php echo $_SESSION['AI_play_count'] ?>.<br></p>
-			<?php
-		}
+		
 	?>
 	<footer class="indfoot">
 		<a href="https://github.com/mathieu-tatat/memory" class="fa fa-github"></a>
